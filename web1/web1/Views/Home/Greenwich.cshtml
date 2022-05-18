@@ -1,6 +1,22 @@
 ﻿<div class="container-fluid col-md-8 text-center">
-	<h1>Welcome to Greenwich University</h1>
-	<img id="gw" src="~/images/greenwich.jpg" />
+	<h1>Welcome to @ViewData["uni"] </h1>
+	<h1>This university was founded in @ViewData["year"]</h1>
 	<br />
+	<h3>List of majors: </h3>
+	<ol>
+	@for (var i = 0; i < @ViewBag.Majors.Count; i++)
+	   {
+			<li>@ViewBag.Majors[i]</li>
+	   }
+	</ol>
+	<ul>
+		@foreach (var major in @ViewBag.Majors)
+		   {
+				<li>@major</li>
+		   }
+	</ul>
+
 	<a href="https://cms.greenwich.edu.vn">CMS Greenwich</a>
+	<img id="gw" src="~/images/greenwich.jpg" />
+	
 </div>

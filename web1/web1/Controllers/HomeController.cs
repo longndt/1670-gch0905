@@ -30,6 +30,18 @@ namespace web1.Controllers
 
         public IActionResult Greenwich()
         {
+            string university = "University of Greenwich (Vietnam)";
+            int year = 2009;
+            List<string> majors = new List<string>()
+            {
+                "Information Technology",
+                "Business Management",
+                "Graphic Design"
+            };
+            ViewData["uni"] = university;
+            ViewData["year"] = year;
+            ViewBag.Majors = majors;
+
             return View();
         }
 
