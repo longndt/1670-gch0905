@@ -350,3 +350,4 @@ C:\workspace\1670-gch0905\web1\web1\obj\Debug\netcoreapp3.1\web1.csproj.CopyComp
 C:\workspace\1670-gch0905\web1\web1\obj\Debug\netcoreapp3.1\web1.dll
 C:\workspace\1670-gch0905\web1\web1\obj\Debug\netcoreapp3.1\web1.pdb
 C:\workspace\1670-gch0905\web1\web1\obj\Debug\netcoreapp3.1\web1.genruntimeconfig.cache
+C:\workspace\1670-gch0905\web1\web1\obj\Debug\netcoreapp3.1\Razor\Views\Home\Greenwich.cshtml.g.cs
