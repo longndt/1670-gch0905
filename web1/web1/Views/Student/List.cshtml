@@ -1,0 +1,20 @@
+﻿<div class="container col-md-6 text-center">
+	<table class="table table-hover">
+		<tr>
+			<th>Student ID</th>
+			<th>Student Name</th>
+			<th>Student Age</th>
+			<th>Student Grade</th>
+		</tr>
+		@foreach (var student in @ViewBag.Students)
+		{
+		<tr>
+			<th>@student.id</th>
+			<th>@student.name</th>
+			<th>@student.age</th>
+			<th>@student.grade</th>
+		</tr> 
+		}
+	</table>
+</div>
+
