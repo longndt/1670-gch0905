@@ -355,3 +355,4 @@ C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\VietNam\Index
 C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\Person\List.cshtml.g.cs
 C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\Hello\Login.cshtml.g.cs
+C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\Demo\Math.cshtml.g.cs

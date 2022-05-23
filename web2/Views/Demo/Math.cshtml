@@ -1,0 +1,20 @@
+@{
+	var a = 3;
+	var b = 5;
+	var c = a + b;
+	var x = 10;
+	var y = 15;
+	var z = 20;
+}
+<h1>@a + @b = @c</h1>
+@if (x>=y && x>=z)
+{
+	<h1>@a is max</h1>
+}
+else if (y>=x && y>=z)
+{
+	<h1>@y is max</h1>
+}
+else {
+	<h1>@z is max</h1>
+}
