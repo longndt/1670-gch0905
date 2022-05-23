@@ -1,0 +1,27 @@
+﻿@model web2.Models.Person
+
+@{
+    var current_year = DateTime.Now.Year;
+    var year_of_birth = current_year - @Model.Age;
+    var title = "Person Detail";
+}
+
+<div class="container col-md-8 text-center">
+    <h1 class="text text-primary">@title</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>Person ID</th>
+            <th>Person Name</th>
+            <th>Person Age</th>
+            <th>Person Year of Birth</th>
+            <th>Person Address</th>
+        </tr>
+        <tr>
+            <td>@Model.Id</td>
+            <td>@Model.Name </td>
+            <td>@Model.Age </td>
+            <td>@year_of_birth</td>
+            <td>@Model.Address </td>
+        </tr>
+    </table>
+</div>

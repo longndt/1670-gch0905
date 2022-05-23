@@ -1,0 +1,7 @@
+﻿<h1>Tên nước: @ViewData["TenNuoc"]</h1>
+<h2>Dân số  : @ViewData["DanSo"]</h2>
+<h3>Các thành phố nổi bật: </h3>
+@foreach (var city in @ViewBag.ThanhPho)
+{
+    <h4>@city</h4>
+}
