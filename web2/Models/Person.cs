@@ -1,4 +1,6 @@
-﻿namespace web2.Models
+﻿using System.Collections.Generic;
+
+namespace web2.Models
 {
     public class Person
     {

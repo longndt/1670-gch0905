@@ -24,5 +24,10 @@ namespace web2.Controllers
         {
             return View();
         }
+
+        public IActionResult Math()
+        {
+            return View("~/Views/Demo/Math.cshtml");
+        }
     }
 }

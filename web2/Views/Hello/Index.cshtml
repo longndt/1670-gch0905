@@ -1,2 +1,18 @@
-﻿<h1> Hello World !</h1>
+﻿@{
+    var now = DateTime.Now.Day;
+    var university = "Greenwich";
+    var year = 2022;
+    var dt = DateTime.Now;
+}
+
 <a asp-controller="Hello" asp-action="Greenwich">Link to Greenwich</a>
+<h1> Hello World !</h1>
+<h2>@DateTime.Now</h2>
+<h2>Today is @now</h2>
+<h3>@Html.Raw(university)</h3>
+<h3>@Html.Raw(year)</h3>
+<h3>@Html.Raw(dt)</h3>
+<p>
+     This is the sign that separates email names from domains: @@<br />
+     And this is how smart Razor is: spam_me@gmail.com
+</p>

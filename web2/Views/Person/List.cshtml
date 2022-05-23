@@ -1,9 +1,11 @@
-﻿@model web2.Models.Person
+﻿@model List<Person>
 
 @{
-    var current_year = DateTime.Now.Year;
-    var year_of_birth = current_year - @Model.Age;
+    ViewData["Title"] = "Person List";
     var title = "Person Detail";
+    var total_person = Model.Count;
+    var total_age = 0;
+    //Layout = null;
 }
 
 <div class="container col-md-8 text-center">
@@ -16,12 +18,26 @@
             <th>Person Year of Birth</th>
             <th>Person Address</th>
         </tr>
-        <tr>
-            <td>@Model.Id</td>
-            <td>@Model.Name </td>
-            <td>@Model.Age </td>
-            <td>@year_of_birth</td>
-            <td>@Model.Address </td>
-        </tr>
+        @foreach (var person in Model)
+        {
+            <tr>
+            <td>@person.Id</td>
+            <td>@person.Name </td>
+            <td>@person.Age </td>
+            @{
+              var yob = DateTime.Now.Year - person.Age;
+            }
+            <td>@yob</td>
+            <td>@person.Address </td>
+                @{
+                    total_age += person.Age;
+                }
+            </tr>
+        }
+            @{
+                var average_age = total_age / total_person;
+            }
     </table>
+    <h5>Total Person: @total_person </h5>
+    <h5>Average age: @average_age </h5>
 </div>

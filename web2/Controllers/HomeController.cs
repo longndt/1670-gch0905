@@ -28,6 +28,11 @@ namespace web2.Controllers
             return View();
         }
 
+        public IActionResult Login()
+        {
+            return View("~/Views/Hello/Login.cshtml");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

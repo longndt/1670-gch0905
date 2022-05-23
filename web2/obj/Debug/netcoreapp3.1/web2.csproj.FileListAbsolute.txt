@@ -340,7 +340,6 @@ C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\Hello\Index.c
 C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
-C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
@@ -354,3 +353,5 @@ C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\web2.genruntimeconfig.cac
 C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\Demo\Greenwich.cshtml.g.cs
 C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\VietNam\Index.cshtml.g.cs
 C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\Person\List.cshtml.g.cs
+C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\workspace\1670-gch0905\web2\obj\Debug\netcoreapp3.1\Razor\Views\Hello\Login.cshtml.g.cs
