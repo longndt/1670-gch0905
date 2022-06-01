@@ -351,7 +351,9 @@ C:\workspace\1670-gch0905\web4\obj\Debug\netcoreapp3.1\web4.csproj.CopyComplete
 C:\workspace\1670-gch0905\web4\obj\Debug\netcoreapp3.1\web4.dll
 C:\workspace\1670-gch0905\web4\obj\Debug\netcoreapp3.1\web4.pdb
 C:\workspace\1670-gch0905\web4\obj\Debug\netcoreapp3.1\web4.genruntimeconfig.cache
-C:\workspace\1670-gch0905\web4\obj\Debug\netcoreapp3.1\Razor\Views\Demo\Index.cshtml.g.cs
 C:\workspace\1670-gch0905\web4\obj\Debug\netcoreapp3.1\Razor\Views\Demo\StudentList.cshtml.g.cs
 C:\workspace\1670-gch0905\web4\obj\Debug\netcoreapp3.1\Razor\Views\Demo\Input.cshtml.g.cs
-C:\workspace\1670-gch0905\web4\obj\Debug\netcoreapp3.1\Razor\Views\Demo\Output.cshtml.g.cs
+C:\workspace\1670-gch0905\web4\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
+C:\workspace\1670-gch0905\web4\obj\Debug\netcoreapp3.1\Razor\Views\Login\Login.cshtml.g.cs
+C:\workspace\1670-gch0905\web4\obj\Debug\netcoreapp3.1\Razor\Views\Person\Hello.cshtml.g.cs
+C:\workspace\1670-gch0905\web4\obj\Debug\netcoreapp3.1\Razor\Views\Person\Index.cshtml.g.cs

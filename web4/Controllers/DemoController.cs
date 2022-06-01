@@ -22,16 +22,6 @@ namespace web4.Controllers
             //return View("~/Views/Home/Demo.cshtml");
             
         }
-         
-        public IActionResult Input()
-        {
-            return View();
-        }
-
-        public IActionResult Output(Person s)
-        {
-            return View(s);
-        }
         
         public IActionResult StudentList()
         {
@@ -46,6 +36,16 @@ namespace web4.Controllers
             Student s4 = new Student(4, "Cong", "cong@gmail.com", "Hai Phong");
             students.Add(s4);
             return View(students);
+        }
+
+        public IActionResult Input()
+        {
+            return View();
+        }
+
+        public IActionResult Output(Person s)
+        {
+            return View(s);
         }
     }
 }
