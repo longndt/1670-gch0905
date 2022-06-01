@@ -8,5 +8,7 @@
         public string Gender { get; set; }
 
         public string Education { get; set; }
+
+        public bool IsMarried { get; set; }
     }
 }

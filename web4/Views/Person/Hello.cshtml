@@ -10,3 +10,9 @@
 <h1>Năm nay bạn @age tuổi</h1>
 <h1>Giới tính: @Model.Gender</h1>
 <h1>Học vấn: @Model.Education</h1>
+@if (@Model.IsMarried == true)
+{
+    <h1>Bạn đã kết hôn</h1>
+} else {
+    <h1>Bạn vẫn độc thân</h1>
+}
