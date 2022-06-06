@@ -1,0 +1,29 @@
+﻿@model web5.Models.User
+
+<div class="container col-md-5 text-center mt-3">
+    <table class="table table-info">
+        <tr>
+            <th class="text text-success" colspan="2">User Information</th>
+        </tr>
+        <tr>
+            <th>Full Name</th>
+            <td>@Model.FullName</td>
+        </tr>
+        <tr>
+            <th>Birthday</th>
+            <td>@Model.DateOfBirth.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <th>Mobile</th>
+            <td>@Model.MobilePhone</td>
+        </tr>
+        <tr>
+            <th>Married</th>
+            <td>@Model.Married</td>
+        </tr>
+    </table>
+</div>

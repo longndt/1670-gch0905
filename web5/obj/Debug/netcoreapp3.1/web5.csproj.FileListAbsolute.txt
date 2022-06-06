@@ -471,3 +471,6 @@ C:\workspace\1670-gch0905\web5\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Page
 C:\workspace\1670-gch0905\web5\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Error.cshtml.g.cs
 C:\workspace\1670-gch0905\web5\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\workspace\1670-gch0905\web5\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+C:\workspace\1670-gch0905\web5\obj\Debug\netcoreapp3.1\Razor\Views\Hello\Index.cshtml.g.cs
+C:\workspace\1670-gch0905\web5\obj\Debug\netcoreapp3.1\Razor\Views\User\Input.cshtml.g.cs
+C:\workspace\1670-gch0905\web5\obj\Debug\netcoreapp3.1\Razor\Views\User\Output.cshtml.g.cs

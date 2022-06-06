@@ -1,0 +1,28 @@
+﻿@model web5.Models.User
+
+<div class="container-fluid col-md-5 mt-3">
+    <h1 class="text text-danger">Add new user</h1>
+    <form asp-controller="User" asp-action="Output">
+    <div class="form-group">
+       <label>Enter full name</label>
+       <input class="form-control" asp-for="FullName"/> 
+    </div>
+    <div class="form-group">
+       <label>Enter birthday</label>
+       <input class="form-control" asp-for="DateOfBirth"/> 
+    </div>
+     <div class="form-group">
+       <label>Enter email</label>
+       <input class="form-control" asp-for="Email"/> 
+    </div>
+     <div class="form-group">
+       <label>Enter phone</label>
+       <input class="form-control" asp-for="MobilePhone"/> 
+    </div>
+     <div class="form-group">
+       <label>Married ?</label>
+       <input asp-for="Married"/> 
+    </div>
+    <input type="submit" value="OK" />
+</form>
+</div>

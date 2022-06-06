@@ -27,7 +27,6 @@ namespace web5.Models
         [Range(0,10)]
         public float? Grade { get; set; } //nullable ==> required = false
  
-        [IsBefore("01/01/2022")]
         public DateTime BirthDay { get; set; }
 
         public string Address { get; set; }
