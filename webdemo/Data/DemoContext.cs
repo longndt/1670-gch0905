@@ -15,5 +15,13 @@ namespace webdemo.Data
         public DbSet<Course> Courses { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
+
+        //tạo bảng trong DB tương ứng với model (entity)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Enrollment>().ToTable("Enrollment");
+            modelBuilder.Entity<Course>().ToTable("Course");
+            modelBuilder.Entity<Student>().ToTable("Student");
+        }
     }
 }
