@@ -28,6 +28,19 @@ namespace webdemo.Controllers
             return View(await _context.Students.ToListAsync());
         }
 
-        //READ feature: SELECT * FROM Student WHERE Id = {id}
+        //READ feature: SELECT * FROM Student WHERE Id = id
+        public async Task<IActionResult> Detail(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var student = await _context.Students
+                   .Include(s => s.Enrollments)
+                   .ThenInclude(e => e.Course)
+                   .FirstOrDefaultAsync(m => m.Id == id);
+            return View(student);
+        }
     }
 }

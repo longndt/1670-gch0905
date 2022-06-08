@@ -1,0 +1,28 @@
+﻿@model webdemo.Models.Student
+
+<div class="container col-md-10 text-center mt-3">
+    <table class="table table-light">
+       <tr class="alert alert-warning">
+           <th colspan="2" class="text text-uppercase">Student Detail</th>
+       </tr>
+       <tr>
+           <th>Full Name</th>
+           <td>@Model.FirstMidName @Model.LastName</td>
+       </tr>
+       <tr>
+           <th>Enrollment Date</th>
+           <td>@Model.EnrollmentDate.ToShortDateString()</td>
+       </tr>
+       <tr>
+           <th class="text text-primary">Enrollments</th>
+           <td></td>
+       </tr>
+       @foreach (var enrollment in Model.Enrollments)
+      {
+       <tr>
+           <td>Course Title: @enrollment.Course.Title</td>
+           <td>Student Grade: @enrollment.Grade</td>
+       </tr>    
+      }
+    </table>
+</div>
