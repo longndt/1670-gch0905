@@ -1,0 +1,18 @@
+﻿@model web4.Models.Person
+
+@{
+    int birthyear = Model.BirthYear;
+    int currentyear = DateTime.Now.Year;
+    int age = currentyear - birthyear;
+}
+
+<h1>Xin chào @Model.Name</h1>
+<h1>Năm nay bạn @age tuổi</h1>
+<h1>Giới tính: @Model.Gender</h1>
+<h1>Học vấn: @Model.Education</h1>
+@if (@Model.IsMarried == true)
+{
+    <h1>Bạn đã kết hôn</h1>
+} else {
+    <h1>Bạn vẫn độc thân</h1>
+}

@@ -1,0 +1,23 @@
+﻿@*@{
+    string username = ViewBag.Username;
+    string password = ViewBag.Password;
+}
+
+@if (username == "admin" && password == "123456") {
+    <h1>Welcome, @username!</h1>
+}
+else
+{
+    <h1>Login failed!</h1>
+}*@
+
+@if (ViewData["result"].ToString() == "true") {
+    <h1>Login succeed !</h1>
+}
+else
+{
+    <h1>Login failed!</h1>
+    <h2>
+        <a asp-controller="Login"  asp-action="Index">Click here to login again !</a>
+    </h2>
+}

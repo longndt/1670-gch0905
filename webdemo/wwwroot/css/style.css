@@ -1,0 +1,19 @@
+﻿body {
+    background-color: lavenderblush;
+}
+
+img#greenwich {
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+h4#greenwich {
+    font-style: italic;
+    color: blue;
+    margin-bottom: 30px;
+}
+
+a#greenwich:hover {
+    color: red;
+    text-decoration: underline;
+}
