@@ -383,3 +383,7 @@ C:\workspace\1670-gch0905\webdemo\obj\Debug\netcoreapp3.1\Razor\Views\Course\Ind
 C:\workspace\1670-gch0905\webdemo\obj\Debug\netcoreapp3.1\Razor\Views\Course\Detail.cshtml.g.cs
 C:\workspace\1670-gch0905\webdemo\obj\Debug\netcoreapp3.1\Razor\Views\Enrollment\Index.cshtml.g.cs
 C:\workspace\1670-gch0905\webdemo\obj\Debug\netcoreapp3.1\Razor\Views\Enrollment\Detail.cshtml.g.cs
+C:\workspace\1670-gch0905\webdemo\obj\Debug\netcoreapp3.1\Razor\Views\Student\Create.cshtml.g.cs
+C:\workspace\1670-gch0905\webdemo\obj\Debug\netcoreapp3.1\Razor\Views\Student\Edit.cshtml.g.cs
+C:\workspace\1670-gch0905\webdemo\obj\Debug\netcoreapp3.1\Razor\Views\Course\Create.cshtml.g.cs
+C:\workspace\1670-gch0905\webdemo\obj\Debug\netcoreapp3.1\Razor\Views\Course\Edit.cshtml.g.cs

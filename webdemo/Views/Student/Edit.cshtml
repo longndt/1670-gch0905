@@ -1,0 +1,26 @@
+﻿@model webdemo.Models.Student;
+
+<div class="container col-md-8 text-center mt-3">
+    <h1 class="text text-danger">Edit student</h1>
+    <form action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label class="text text-info">First & Middle Name</label>
+            <input class="form-control" asp-for="FirstMidName"  />
+            <span class="text text-danger" asp-validation-for="FirstMidName"></span>
+        </div>
+        <div class="form-group">
+            <label class="text text-info">Last Name</label>
+            <input class="form-control" asp-for="LastName" />
+            <span class="text text-danger" asp-validation-for="LastName"></span>
+        </div>
+        <div class="form-group">
+            <label class="text text-info">Enrollment Date</label>
+            <input class="form-control" asp-for="EnrollmentDate" />
+            <span class="text text-danger" asp-validation-for="EnrollmentDate"></span>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" value="Edit" />
+        </div>
+    </form>
+</div>

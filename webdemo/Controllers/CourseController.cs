@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using webdemo.Data;
+using webdemo.Models;
 
 namespace webdemo.Controllers
 {
@@ -44,6 +45,49 @@ namespace webdemo.Controllers
             context.SaveChanges();
 
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Course course)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Add(course);
+                context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(course);
+        }
+
+        public IActionResult Edit (int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var course = context.Courses.Find(id);
+            if (course == null)
+            {
+                return NotFound();
+            }
+            return View(course);
+        }
+
+        [HttpPost]
+        public IActionResult Edit (Course course)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Update(course);
+                context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(course);
         }
     }
 }
