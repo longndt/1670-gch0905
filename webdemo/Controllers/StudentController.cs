@@ -42,5 +42,17 @@ namespace webdemo.Controllers
                    .FirstOrDefaultAsync(m => m.Id == id);
             return View(student);
         }
+
+        //DELETE FROM Student WHERE Id = id
+        public IActionResult Delete (int? id)
+        {
+            if (id == null)
+                return NotFound();
+            var student = _context.Students.Find(id);
+            _context.Remove(student);
+            _context.SaveChanges();
+            
+            return RedirectToAction("Index");
+        }
     }
 }

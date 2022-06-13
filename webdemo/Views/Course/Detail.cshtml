@@ -1,0 +1,50 @@
+﻿@model webdemo.Models.Course
+
+<div class="container col-md-10 text-center mt-3">
+    <table class="table table-hover mt-3">
+        <tr>
+            <th colspan="3" class="text text-warning">
+                <h3>Course Detail</h3>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Course Title
+            </th>
+            <td colspan="2">
+                @Model.Title
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Course Credits
+            </th>
+            <td colspan="2">
+                @Model.Credits
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Enrollments
+            </th>
+            <td colspan="2"></td>
+        </tr>
+         <tr>
+            <td></td>
+            <th>Student Name</th>
+            <th>Student Grade</th>
+        </tr>
+        @foreach (var enrollment in Model.Enrollments)
+       {
+           <tr>
+               <td></td>
+               <td>
+                    <a asp-controller="Student" asp-action="Detail" asp-route-id="@enrollment.StudentId">
+                        @enrollment.Student.FirstMidName @enrollment.Student.LastName
+                    </a>    
+               </td>
+               <td>@enrollment.Grade</td>
+           </tr>
+       }
+    </table>  
+</div>

@@ -379,3 +379,7 @@ C:\workspace\1670-gch0905\webdemo\bin\Debug\netcoreapp3.1\runtimes\win\lib\netst
 C:\workspace\1670-gch0905\webdemo\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\workspace\1670-gch0905\webdemo\obj\Debug\netcoreapp3.1\Razor\Views\Student\Index.cshtml.g.cs
 C:\workspace\1670-gch0905\webdemo\obj\Debug\netcoreapp3.1\Razor\Views\Home\Detail.cshtml.g.cs
+C:\workspace\1670-gch0905\webdemo\obj\Debug\netcoreapp3.1\Razor\Views\Course\Index.cshtml.g.cs
+C:\workspace\1670-gch0905\webdemo\obj\Debug\netcoreapp3.1\Razor\Views\Course\Detail.cshtml.g.cs
+C:\workspace\1670-gch0905\webdemo\obj\Debug\netcoreapp3.1\Razor\Views\Enrollment\Index.cshtml.g.cs
+C:\workspace\1670-gch0905\webdemo\obj\Debug\netcoreapp3.1\Razor\Views\Enrollment\Detail.cshtml.g.cs

@@ -20,7 +20,11 @@
        @foreach (var enrollment in Model.Enrollments)
       {
        <tr>
-           <td>Course Title: @enrollment.Course.Title</td>
+           <td>Course Title:
+               <a asp-controller="Course" asp-action="Detail" asp-route-id="@enrollment.CourseId">
+                   @enrollment.Course.Title
+               </a>
+           </td>
            <td>Student Grade: @enrollment.Grade</td>
        </tr>    
       }

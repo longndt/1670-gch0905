@@ -1,0 +1,40 @@
+﻿@model webdemo.Models.Enrollment;
+
+<div class="container col-md-10 text-center mt-3">
+    <table class="table table-hover mt-3">
+        <tr>
+            <th colspan="2" class="text text-warning">
+                <h3>Enrollment Detail</h3>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Student Name
+            </th>
+            <td>
+                <a asp-controller="Student" asp-action="Detail" asp-route-id="@Model.StudentId">
+                     @Model.Student.FirstMidName @Model.Student.LastName
+                </a> 
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Course Title
+            </th>
+            <td>
+                <a asp-controller="Course" asp-action="Detail" asp-route-id="@Model.CourseId">
+                     @Model.Course.Title
+                </a>  
+            </td>
+        </tr>
+        <tr>
+        <tr>
+            <th>
+                Student Grade
+            </th>
+            <td>
+                @Model.Grade
+            </td>
+        </tr>
+    </table>  
+</div>
