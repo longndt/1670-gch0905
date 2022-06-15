@@ -26,6 +26,6 @@ namespace demoweb.Models
         [Required]
         public int CategoryId { get; set; }
         
-        public Category category { get; set; }
+        public Category Category { get; set; }
     }   
 }

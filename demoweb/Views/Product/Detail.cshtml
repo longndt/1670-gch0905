@@ -1,0 +1,31 @@
+﻿@model demoweb.Models.Product
+
+<div class="container col-md-8 text-center mt-3">
+    <h1 class="text text-danger">Product Detail</h1>
+    <table class="table table-primary mt-3">
+        <tr>
+            <th>Product Name</th>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <th>Product Price</th>
+            <td>@Model.Price</td>
+        </tr>
+        <tr>
+            <th>Product Quantity</th>
+            <td>@Model.Quantity</td>
+        </tr>
+        <tr>
+            <th>Product Date</th>
+            <td>@Model.Date.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <th>Product Category</th>
+            <td>
+                <a class="font-weight-bold" asp-controller="Category" asp-action="Detail" asp-route-id="@Model.CategoryId">
+                @Model.Category.Name
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>

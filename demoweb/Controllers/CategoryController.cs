@@ -44,47 +44,5 @@ namespace demoweb.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
-
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult Create(Category category)
-        {
-           if (ModelState.IsValid) {
-                context.Category.Add(category);
-                context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(category);
-        }
-
-        public IActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            var category = context.Category.Find(id);
-            if (category == null)
-            {
-                return NotFound();
-            }
-            return View(category);
-        }
-
-        [HttpPost]
-        public IActionResult Edit(Category category)
-        {
-            if (ModelState.IsValid)
-            {
-                context.Category.Update(category);
-                context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(category);
-        }
     }
 }   

@@ -1,5 +1,29 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model ICollection<demoweb.Models.Product>
+
+<div class="container col-md-8 text-center mt-3">
+    <h1 class="text text-danger">Product List</h1>
+    <table class="table table-primary mt-3">
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Product Category</th>
+            <th>Delete</th>
+        </tr>
+        @foreach (var product in Model)
+        {
+           <tr>
+               <td>@product.Id</td>
+               <td> @product.Name </td>
+               <td>
+                   <a class="font-weight-bold" asp-controller="Category" asp-action="Detail" asp-route-id="@product.CategoryId">
+                        @product.Category.Name
+                   </a>
+               <td>
+                   <a class="btn btn-danger" asp-action="Delete" asp-route-id="@product.Id"
+                   onclick="return confirm('Are you sure you want to delete this product ?');">
+                   Delete</a>
+               </td>
+           </tr>
+        }
+    </table>
+</div>
