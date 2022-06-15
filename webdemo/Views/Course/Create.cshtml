@@ -1,0 +1,25 @@
+﻿@model webdemo.Models.Course 
+
+<div class="container-fluid col-md-5 text-center mt-3">
+    <h5 class="alert alert-warning">Create new course</h5>
+    <form class="card p-3 bg-light" action="Create" method="post">
+        <div class="form-group">
+            <label asp-for="CourseId"></label>
+            <input class="form-control" asp-for="CourseId">
+            <span class="text text-danger" asp-validation-for="CourseId"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Title"></label>
+            <input class="form-control" asp-for="Title">
+             <span class="text text-danger" asp-validation-for="Title"></span>
+        </div>
+         <div class="form-group">
+            <label asp-for="Credits"></label>
+            <input class="form-control" asp-for="Credits">
+             <span class="text text-danger" asp-validation-for="Credits"></span>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-success" type="submit" value="Create">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,50 @@
+﻿@model ICollection<webdemo.Models.Course>
+
+<div class="container col-md-8 text-center mt-3">
+    <h1 class="text text-bg-success">Course List</h1>
+    <h6 class="text text-danger">Course total: @Model.Count</h6>
+    <a class="btn btn-outline-success mt-3" asp-action="Create">Create</a>
+    <table class="table table-primary mt-3">
+        <tr>
+            <th>
+                Course Number
+            </th>
+            <th>
+                Course Id
+            </th>
+            <th>
+                Course Title
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+        @{
+            int i = 1;
+        }
+        @foreach (var course in Model)
+       {
+        <tr>
+            <td>
+                @i
+            </td>
+            <td>
+                @course.CourseId
+            </td>
+             <td>
+                @course.Title
+            </td>            
+             <td>
+                <a class="btn btn-info" asp-action="Detail" asp-route-id="@course.CourseId">Detail</a>
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@course.CourseId">Edit</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@course.CourseId"
+                onclick="    return confirm('Are you sure to delete this course ?');"
+                >Delete</a>
+            </td>
+            @{
+                i++;
+            }
+        </tr>
+       } 
+    </table>
+</div>    

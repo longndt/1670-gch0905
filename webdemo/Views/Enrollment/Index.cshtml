@@ -1,0 +1,55 @@
+﻿@model ICollection<webdemo.Models.Enrollment>
+
+<div class="container col-md-8 text-center mt-3">
+    <h1 class="text text-primary">Enrollment List</h1>
+    <a asp-action="Create">
+        <img src="~/images/add.png" width="50" height="40" />
+    </a>
+    <table class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>
+                    Enrollment Id
+                </th>
+                 <th>
+                    Student Name
+                </th>
+                 <th>
+                    Course Name
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var enrollment in Model)
+           {
+               <tr>
+                   <td>
+                       @Html.DisplayFor(item => enrollment.EnrollmentId)
+                   </td>
+                    <td>
+                       @Html.DisplayFor(item => enrollment.StudentId)
+                   </td>
+                   <td>
+                       @Html.DisplayFor(item => enrollment.CourseId)
+                   </td>
+                   <td>
+                           <a asp-controller="Enrollment" asp-action="Detail" asp-route-id="@enrollment.EnrollmentId">
+                                <img src="~/images/detail.jpg" width="50" height="40" />
+                           </a>
+                           <a asp-controller="Enrollment" asp-action="Edit" asp-route-id="@enrollment.EnrollmentId">
+                                <img src="~/images/edit.jpg" width="50" height="40" />
+                           </a>
+                           <a asp-controller="Enrollment" asp-action="Delete" asp-route-id="@enrollment.EnrollmentId"
+                           onclick="return confirm('Are you sure to delete this enrollment ?')"
+                           >
+                                <img src="~/images/delete.jpg" width="50" height="40" />
+                           </a>
+                   </td>
+               </tr>
+           }
+        </tbody>
+    </table>
+</div>

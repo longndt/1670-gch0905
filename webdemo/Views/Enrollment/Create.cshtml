@@ -1,0 +1,35 @@
+﻿@model webdemo.Models.Enrollment
+
+<div class="container-fluid col-md-5 text-center mt-3">
+    <h5 class="alert alert-warning">Create new enrollment</h5>
+    <form class="card p-3 bg-light" action="Create" method="post">
+        <div class="form-group">
+            <label>Course name</label>
+            <select class="form-control" asp-for="CourseId" asp-items="@(new SelectList(ViewBag.Courses,"CourseId","Title"))">
+                <option>Select a course ...</option>
+             </select>
+             <span class="text text-danger" asp-validation-for="CourseId"></span>
+        </div>
+         <div class="form-group">
+            <label>Student name</label>
+            <select class="form-control" asp-for="StudentId">
+            <option>Select a student ...</option>
+                @foreach (var student in ViewBag.Students)
+                {
+                    <option value="@student.Id">@student.FirstMidName @student.LastName</option>
+                }
+             </select>
+             <span class="text text-danger" asp-validation-for="StudentId"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Grade"></label>
+            <select class="form-control" asp-for="Grade" asp-items="Html.GetEnumSelectList<Grade>()">
+                <option>Select a grade ...</option>
+            </select>
+            <span class="text text-danger" asp-validation-for="Grade"></span>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-success" type="submit" value="Create">
+        </div>
+    </form>
+</div>
