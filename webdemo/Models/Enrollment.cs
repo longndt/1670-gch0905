@@ -1,4 +1,6 @@
-﻿namespace webdemo.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace webdemo.Models
 {
     public enum Grade
     {
@@ -11,6 +13,8 @@
         
         //foreign key (FK)
         public int CourseId { get; set; }
+
+        [Display(Name = "Mã sinh viên")]
         public int StudentId { get; set; }
         
         //data type: enum Grade

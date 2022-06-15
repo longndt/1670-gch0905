@@ -1,7 +1,8 @@
 ﻿@model ICollection<webdemo.Models.Student>
 
-<div class="container col-md-12 text-center mt-3">
+<div class="container col-md-8 text-center mt-3">
     <h1 class="text text-danger">Student List</h1>
+    <h4 class="text text-info">Total students: @ViewData["total"]</h4>
     <a class="btn btn-primary" asp-action="Create">Create</a>
     <table class="table table-primary mt-3">
         <tr>

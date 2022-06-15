@@ -18,16 +18,20 @@ namespace webdemo.Controllers
         //READ feature: SELECT * FROM Student
 
         //Method 1: synchronous (đồng bộ) 
-        //public IActionResult Index()
-        //{
-        //    return View(_context.Students.ToList());
-        //}
+        public IActionResult Index()
+        {
+            var students = _context.Students.ToList();
+            var total = _context.Students.ToList().Count();
+            //ViewBag.Total = total;
+            ViewData["total"] = total;
+            return View(students);
+        }
 
         //Method 2: asynchronous (bất đồng bộ) => recommended
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Students.ToListAsync());
-        }
+        //public async Task<IActionResult> Index()
+        //{
+        //    return View(await _context.Students.ToListAsync());
+        //}
 
         //READ feature: SELECT * FROM Student WHERE Id = id
         public async Task<IActionResult> Detail(int? id)

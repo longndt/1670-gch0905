@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using webdemo.Data;
+using webdemo.Models;
 
 namespace webdemo.Controllers
 {
@@ -39,6 +40,64 @@ namespace webdemo.Controllers
             context.SaveChanges();
 
             return RedirectToAction(nameof(Index));
+        }
+
+        //render ra form Create Enrollment cho người dùng nhập liệu
+        public IActionResult Create()
+        {
+            //lấy dữ liệu từ bảng Course và Student để đổ vào form
+            //Create Enrollment cho người dùng lựa chọn
+            var courses = context.Courses.ToList();
+            var students = context.Students.ToList();
+            ViewBag.Courses = courses;
+            ViewBag.Students = students;
+            return View();
+        }
+
+        //nhận & validate dữ liệu từ form Create Enrollment
+        //sau đó lưu vào DB & redirect về trang Enrollment Index
+        [HttpPost]
+        public IActionResult Create(Enrollment enrollment)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Enrollments.Add(enrollment);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+               // return RedirectToAction(nameof(Index));
+            }
+            return View(enrollment);
+        }
+        
+        //render ra form Edit Enrollment
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var enrollment = context.Enrollments.Find(id);
+            if (enrollment == null) {
+                return NotFound();
+            }
+            var courses = context.Courses.ToList();
+            var students = context.Students.ToList();
+            ViewBag.Courses = courses;
+            ViewBag.Students = students;
+            return View(enrollment);
+        }
+
+        //xử lý dữ liệu từ form Edit Enrollment
+        [HttpPost]
+        public IActionResult Edit (Enrollment enrollment)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Enrollments.Update(enrollment);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(enrollment);
         }
     }
 }
