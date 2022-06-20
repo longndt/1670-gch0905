@@ -27,38 +27,6 @@ namespace demoweb.Data
             SeedProduct(builder);
         }
 
-        private void SeedUsers(ModelBuilder builder)
-        {
-            IdentityUser admin = new IdentityUser()
-            {
-                Id = "111111",
-                UserName = "Admin",
-                Email = "admin@gmail.com",
-            };
-
-            IdentityUser staff = new IdentityUser()
-            {
-                Id = "222222",
-                UserName = "Staff",
-                Email = "staff@gmail.com",
-            };
-
-            PasswordHasher<IdentityUser> passwordHasher = new PasswordHasher<IdentityUser>();
-            passwordHasher.HashPassword(admin, "123@Abc");
-            passwordHasher.HashPassword(staff, "123@Abc");
-
-            builder.Entity<IdentityUser>().HasData(admin);
-            builder.Entity<IdentityUser>().HasData(staff);
-        }
-
-        private void SeedRoles(ModelBuilder builder)
-        {
-            builder.Entity<IdentityRole>().HasData(
-                new IdentityRole() { Id = "AAAAAA", Name = "Admin", ConcurrencyStamp = "1", NormalizedName = "Admin" },
-                new IdentityRole() { Id = "BBBBBB", Name = "Staff", ConcurrencyStamp = "2", NormalizedName = "Staff" }
-                );
-        }
-
         private void SeedCategory(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasData(
