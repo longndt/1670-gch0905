@@ -1,4 +1,5 @@
 ﻿using demoweb.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -19,13 +20,12 @@ namespace demoweb.Data
         public DbSet<Product> Product { get; set; }
 
         //tạo code add dữ liệu khởi tạo cho bảng
-            protected void onModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(modelBuilder);
-            SeedCategory(modelBuilder);
-            SeedProduct(modelBuilder);
+            base.OnModelCreating(builder);
+            SeedCategory(builder);
+            SeedProduct(builder);
         }
-
         private void SeedCategory(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasData(

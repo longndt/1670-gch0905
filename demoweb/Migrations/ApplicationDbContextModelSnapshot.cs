@@ -243,6 +243,29 @@ namespace demoweb.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Category");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Máy tính xách tay",
+                            Image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfrIQWjYmbZEvcaqfhrJ5KRfvZ8B3mPm5uKw&usqp=CAU",
+                            Name = "Laptop"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Máy tính để bàn",
+                            Image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLWsLnuU2C828w1pvkxgSJN_CWKrHCD-5Knw&usqp=CAU",
+                            Name = "Desktop"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Điện thoại di động",
+                            Image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6WUOnhg9tjr_dpuI6zGVlHvrDcvHHFGDbRQ&usqp=CAU",
+                            Name = "Mobile"
+                        });
                 });
 
             modelBuilder.Entity("demoweb.Models.Product", b =>
@@ -273,6 +296,62 @@ namespace demoweb.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Product");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            Date = new DateTime(2022, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Asus",
+                            Price = 1000.0,
+                            Quantity = 10
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 1,
+                            Date = new DateTime(2021, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Dell",
+                            Price = 2000.0,
+                            Quantity = 20
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 2,
+                            Date = new DateTime(2020, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "HP",
+                            Price = 3000.0,
+                            Quantity = 30
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 2,
+                            Date = new DateTime(2020, 8, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Lenovo",
+                            Price = 4000.0,
+                            Quantity = 40
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryId = 3,
+                            Date = new DateTime(2018, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Samsung",
+                            Price = 1200.0,
+                            Quantity = 60
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CategoryId = 3,
+                            Date = new DateTime(2015, 5, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "iPhone",
+                            Price = 1100.0,
+                            Quantity = 50
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

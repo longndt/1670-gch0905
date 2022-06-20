@@ -190,6 +190,34 @@ namespace demoweb.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Category",
+                columns: new[] { "Id", "Description", "Image", "Name" },
+                values: new object[] { 1, "Máy tính xách tay", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfrIQWjYmbZEvcaqfhrJ5KRfvZ8B3mPm5uKw&usqp=CAU", "Laptop" });
+
+            migrationBuilder.InsertData(
+                table: "Category",
+                columns: new[] { "Id", "Description", "Image", "Name" },
+                values: new object[] { 2, "Máy tính để bàn", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLWsLnuU2C828w1pvkxgSJN_CWKrHCD-5Knw&usqp=CAU", "Desktop" });
+
+            migrationBuilder.InsertData(
+                table: "Category",
+                columns: new[] { "Id", "Description", "Image", "Name" },
+                values: new object[] { 3, "Điện thoại di động", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6WUOnhg9tjr_dpuI6zGVlHvrDcvHHFGDbRQ&usqp=CAU", "Mobile" });
+
+            migrationBuilder.InsertData(
+                table: "Product",
+                columns: new[] { "Id", "CategoryId", "Date", "Name", "Price", "Quantity" },
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(2022, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "Asus", 1000.0, 10 },
+                    { 2, 1, new DateTime(2021, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "Dell", 2000.0, 20 },
+                    { 3, 2, new DateTime(2020, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "HP", 3000.0, 30 },
+                    { 4, 2, new DateTime(2020, 8, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "Lenovo", 4000.0, 40 },
+                    { 5, 3, new DateTime(2018, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "Samsung", 1200.0, 60 },
+                    { 6, 3, new DateTime(2015, 5, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), "iPhone", 1100.0, 50 }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
