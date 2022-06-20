@@ -44,6 +44,22 @@ namespace demoweb.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "HANOI",
+                            ConcurrencyStamp = "41d9e542-81a3-4959-ac7c-2b30879dfa11",
+                            Name = "Manager",
+                            NormalizedName = "MANAGER"
+                        },
+                        new
+                        {
+                            Id = "HCM",
+                            ConcurrencyStamp = "82b9af6d-9efc-4ff1-9c27-4fcc9d07be45",
+                            Name = "Customer",
+                            NormalizedName = "CUSTOMER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

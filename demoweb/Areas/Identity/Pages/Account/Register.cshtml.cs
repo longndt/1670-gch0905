@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 
@@ -23,6 +24,8 @@ namespace demoweb.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        //Bước 1: tạo Select List để chọn Role khi register tài khoản mới
+        public List<SelectListItem> Roles { get; set; }
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
@@ -34,8 +37,16 @@ namespace demoweb.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            //Bước 2: hiển thị các role trong DB để chọn trong form Registration
+            //Note: Các role phải tương ứng với bảng Role trong DB
+            Roles = new List<SelectListItem>(){
+                    new SelectListItem { Text = "Quản trị viên", Value = "Admin" },
+                    new SelectListItem { Text = "Nhân viên", Value = "Staff" },
+                    new SelectListItem { Text = "Khách hàng", Value = "Customer" },
+                    new SelectListItem { Text = "Quản lý", Value = "Manager" }
+            };
         }
-
+        
         [BindProperty]
         public InputModel Input { get; set; }
 
@@ -60,6 +71,12 @@ namespace demoweb.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            //Bước 3: add thêm attribute UserRole trong Model
+            [Required]
+            [Display(Name = "User Role")]
+            public string UserRole { get; set; }
+
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -87,6 +104,9 @@ namespace demoweb.Areas.Identity.Pages.Account
                         pageHandler: null,
                         values: new { area = "Identity", userId = user.Id, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
+                    
+                    //Bước 4: Add role vào tài khoản người dùng đã đăng ký nếu thông tin nhập vào hợp lệ
+                    await _userManager.AddToRoleAsync(user, Input.UserRole);
 
                     await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");

@@ -1,4 +1,5 @@
 ﻿using demoweb.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace demoweb.Controllers
             this.context = context;
         }
 
+        [Authorize]
         public IActionResult Index()
         {
             var products = context.Product
@@ -21,7 +23,7 @@ namespace demoweb.Controllers
             return View(products);
         }
 
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int? id)
         {
             if (id == null)

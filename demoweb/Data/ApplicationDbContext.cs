@@ -23,8 +23,20 @@ namespace demoweb.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            //add dữ liệu vào bảng Role
+            SeedRole(builder);
+
             SeedCategory(builder);
             SeedProduct(builder);
+
+        }
+
+        private void SeedRole(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole {  Id = "HANOI", Name = "Manager", NormalizedName = "MANAGER"},
+                new IdentityRole {  Id = "HCM", Name = "Customer", NormalizedName = "CUSTOMER"}
+             );
         }
 
         private void SeedCategory(ModelBuilder modelBuilder)
