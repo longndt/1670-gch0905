@@ -1,0 +1,21 @@
+﻿@model ICollection<demo123.Models.Laptop>
+
+<table class="table table-border">
+    <tr>
+        <th>Laptop Id</th>
+        <th>Laptop Name</th>
+        <th>Laptop Price</th>
+        <th>Laptop Manufacturer</th>
+    </tr>
+    @foreach (var laptop in Model)
+   {
+       <tr>
+           <td>@laptop.Id</td>
+            <td>@laptop.Name</td>
+             <td>@laptop.Price $</td>
+              <td>@laptop.Manufacturer</td>
+       </tr>
+   }
+</table>    
+
+    
